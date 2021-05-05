@@ -1,1 +1,97 @@
-/* Other rules */
+/* ------------------
+GLOBAL
+--------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --vert-vinted: #09b1ba;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: yellow; */
+}
+
+/* --- Hero --- */
+
+.hero {
+  background-color: aqua;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* --- Content --- */
+
+.content {
+  /* background-color: darkgray; */
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ------------------
+OFFERS
+--------------------*/
+
+.offer-content {
+  height: 450px;
+  width: 230px;
+  background-color: var(--vert-vinted);
+  border: solid 1px black;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.offer-content:not(:nth-child(5n)) {
+  margin-right: 10px;
+}
+
+/* --- Owner --- */
+
+.owner {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: red;
+  margin-right: 10px;
+}
+.avatar img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: red;
+  object-fit: cover;
+}
+
+/* --- Product --- */
+
+.product-img {
+  width: 210px;
+  height: 330px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+.product-img img {
+  width: 210px;
+  height: 330px;
+  object-fit: cover;
+}
