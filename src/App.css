@@ -59,6 +59,10 @@ OFFERS
   margin-right: 10px;
 }
 
+.offer-content:hover {
+  cursor: pointer;
+}
+
 /* --- Owner --- */
 
 .owner {

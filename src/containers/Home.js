@@ -13,27 +13,29 @@ const Home = ({ data }) => {
       </div>
       <div className="content">
         {data.offers.map((offer, index) => {
-          console.log(offer);
+          // console.log(offer);
           return (
             <div key={offer._id} className="offer-content">
-              <div className="offer">
-                <div className="owner">
-                  <div className="avatar">
-                    <img src={offer.owner.account.avatar.secure_url} alt="" />
+              <Link to={`/offer/${offer._id}`}>
+                <div className="offer">
+                  <div className="owner">
+                    <div className="avatar">
+                      <img src={offer.owner.account.avatar.secure_url} alt="" />
+                    </div>
+                    <span>{offer.owner.account.username}</span>
                   </div>
-                  <span>{offer.owner.account.username}</span>
+                  <div className="product-img">
+                    <img src={offer.product_pictures[0].secure_url} alt="" />
+                  </div>
+                  <div className="product-price">{`${offer.product_price} €`}</div>
+                  <div className="product-size">
+                    {offer.product_details[0].TAILLE}
+                  </div>
+                  <div className="product-brand">
+                    {offer.product_details[0].MARQUE}
+                  </div>
                 </div>
-                <div className="product-img">
-                  <img src={offer.product_pictures[0].secure_url} alt="" />
-                </div>
-                <div className="product-price">{`${offer.product_price} €`}</div>
-                <div className="product-size">
-                  {offer.product_details[0].TAILLE}
-                </div>
-                <div className="product-brand">
-                  {offer.product_details[0].MARQUE}
-                </div>
-              </div>
+              </Link>
             </div>
           );
         })}
