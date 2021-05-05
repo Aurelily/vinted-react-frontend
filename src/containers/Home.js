@@ -8,8 +8,7 @@ const Home = ({ data }) => {
     <div className="container">
       <Header />
       <div className="hero">
-        <h1>Home page</h1>
-        <Link to={"/offer"}>Go to Offer</Link>
+        <h1>Home page Hero</h1>
       </div>
       <div className="content">
         {data.offers.map((offer, index) => {
@@ -19,14 +18,18 @@ const Home = ({ data }) => {
               <Link to={`/offer/${offer._id}`}>
                 <div className="offer">
                   <div className="owner">
-                    <div className="avatar">
-                      <img src={offer.owner.account.avatar.secure_url} alt="" />
-                    </div>
+                    <img
+                      className="avatar"
+                      src={offer.owner.account.avatar.secure_url}
+                      alt=""
+                    />
                     <span>{offer.owner.account.username}</span>
                   </div>
-                  <div className="product-img">
-                    <img src={offer.product_pictures[0].secure_url} alt="" />
-                  </div>
+                  <img
+                    className="product-img"
+                    src={offer.product_pictures[0].secure_url}
+                    alt=""
+                  />
                   <div className="product-price">{`${offer.product_price} €`}</div>
                   <div className="product-size">
                     {offer.product_details[0].TAILLE}

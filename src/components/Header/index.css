@@ -3,4 +3,6 @@
 .header {
   height: 50px;
   background-color: bisque;
+  display: flex;
+  align-items: center;
 }

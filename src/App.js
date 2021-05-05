@@ -34,7 +34,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/offer/:id">
-          <Offer />
+          <Offer data={data} />
         </Route>
         <Route path="/">
           <Home data={data} />

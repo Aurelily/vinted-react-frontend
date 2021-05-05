@@ -5,9 +5,16 @@ GLOBAL
 * {
   box-sizing: border-box;
 }
-
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 :root {
   --vert-vinted: #09b1ba;
+  --light-grey-vinted: #ebedee;
 }
 
 .container {
@@ -15,18 +22,15 @@ GLOBAL
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  /* background-color: yellow; */
+  background-color: var(--light-grey-vinted);
 }
 
 /* --- Hero --- */
 
 .hero {
-  background-color: aqua;
-  height: 200px;
+  background-color: red;
+  height: 800px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 10px;
 }
 
@@ -35,7 +39,7 @@ GLOBAL
 .content {
   /* background-color: darkgray; */
   width: 100vw;
-  height: 100%;
+  height: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +47,7 @@ GLOBAL
 }
 
 /* ------------------
-OFFERS
+HOME PAGE OFFERS
 --------------------*/
 
 .offer-content {
@@ -76,12 +80,6 @@ OFFERS
   border-radius: 50%;
   background-color: red;
   margin-right: 10px;
-}
-.avatar img {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  background-color: red;
   object-fit: cover;
 }
 
@@ -94,8 +92,56 @@ OFFERS
   margin: 10px 0;
 }
 
-.product-img img {
-  width: 210px;
-  height: 330px;
+/* ------------------
+OFFER PAGE
+--------------------*/
+.offer-container {
+  display: flex;
+  height: 100%;
+  /* background-color: yellow; */
+}
+
+/* --- Picture --- */
+
+.col1-picture {
+  width: 50%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+}
+
+.col1-picture img {
+  max-height: 600px;
+  max-width: 600px;
   object-fit: cover;
+}
+
+/* --- Infos --- */
+
+.col2-infos {
+  width: 50%;
+  height: 100%;
+  /* background-color: violet; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.infos-content {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 50px 50px;
+}
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 }
