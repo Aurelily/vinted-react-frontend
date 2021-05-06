@@ -2,27 +2,34 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-const Signup = () => {
-  const [username, setUsername] = useState("");
+const Signup = ({ setUser }) => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    
+    //Je passe mes datas à envoyer à l'API
     const data = {
-      username: username,
+      name: name,
       email: email,
       password: password,
     };
-    console.log(data);
-
-    const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/user/signup", data);
-
+    //Je me connecte à l'API
+    const response = await axios.post(
+      "https://lily-vinted.herokuapp.com/user/signup",
+      data
+    );
     console.log(response);
-   
-  };
 
+    //Je gère l'erreur si le formulaire n'est pas valide
+    if (response.status !== 200) {
+      alert("Le formulaire n'a pu être envoyé");
+    } else {
+      //   Je crée le cookie avec le token attribué
+      setUser(data.token);
+    }
+  };
 
   return (
     <div className="formsContainer">
@@ -32,11 +39,12 @@ const Signup = () => {
           <input
             type="text"
             placeholder="Nom d'utilisateur"
-            id="username"
-            name="username"
-            value={username}
+            id="name"
+            name="name"
+            value={name}
+            required
             onChange={(event) => {
-              setUsername(event.target.value);
+              setName(event.target.value);
             }}
           />
           <input
@@ -45,6 +53,7 @@ const Signup = () => {
             id="email"
             name="email"
             value={email}
+            required
             onChange={(event) => {
               setEmail(event.target.value);
             }}
@@ -55,6 +64,7 @@ const Signup = () => {
             id="password"
             name="password"
             value={password}
+            required
             onChange={(event) => {
               setPassword(event.target.value);
             }}
