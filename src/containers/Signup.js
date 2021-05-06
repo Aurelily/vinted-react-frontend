@@ -17,7 +17,7 @@ const Signup = ({ setUser }) => {
     };
     //Je me connecte à l'API
     const response = await axios.post(
-      "https://lily-vinted.herokuapp.com/user/signup",
+      "https://lereacteur-vinted-api.herokuapp.com/user/signup",
       data
     );
     console.log(response);
