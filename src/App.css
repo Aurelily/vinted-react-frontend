@@ -21,29 +21,29 @@ body {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: var(--light-grey-vinted);
 }
 
 /* --- Hero --- */
 
 .hero {
-  background-color: red;
-  height: 800px;
+  background: center / cover no-repeat url("./assets/img/hero01.jpg");
+  height: 500px;
   display: flex;
-  margin-bottom: 10px;
 }
 
 /* --- Content --- */
 
 .content {
   /* background-color: darkgray; */
-  width: 100vw;
-  height: 100vw;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 /* ------------------
@@ -53,8 +53,8 @@ HOME PAGE OFFERS
 .offer-content {
   height: 450px;
   width: 230px;
-  background-color: var(--vert-vinted);
-  border: solid 1px black;
+  background-color: white;
+  /* border: solid 1px black; */
   margin-bottom: 10px;
   padding: 10px;
 }

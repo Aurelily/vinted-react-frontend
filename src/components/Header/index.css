@@ -2,7 +2,18 @@
 
 .header {
   height: 50px;
-  background-color: bisque;
+  background-color: white;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
 }

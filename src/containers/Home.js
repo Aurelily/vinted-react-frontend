@@ -7,9 +7,7 @@ const Home = ({ data }) => {
   return (
     <div className="container">
       <Header />
-      <div className="hero">
-        <h1>Home page Hero</h1>
-      </div>
+      <div className="hero"></div>
       <div className="content">
         {data.offers.map((offer, index) => {
           // console.log(offer);
