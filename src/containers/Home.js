@@ -1,12 +1,31 @@
+//Import d'Axios pour pouvoir faire des requetes vers l'API après installation via terminal : yarn add axios
+import axios from "axios";
 //import de la methode Link pour insérer des liens de navigation
 import { Link } from "react-router-dom";
-//import de mes composants utilisés ici
-import Header from "../components/Header";
+//import useState
+import { useState, useEffect } from "react";
 
-const Home = ({ data }) => {
-  return (
+const Home = () => {
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  //Chargement des données de l'API via la fonction fetchData, une seule fois au chargement du site.
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(
+        "https://lereacteur-vinted-api.herokuapp.com/offers"
+      );
+      // console.log(response.data);
+      setData(response.data);
+      setIsLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  return isLoading ? (
+    <span>En cours de chargement...</span>
+  ) : (
     <div className="container">
-      <Header />
       <div className="hero"></div>
       <div className="content">
         {data.offers.map((offer, index) => {

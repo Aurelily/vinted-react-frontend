@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
 }
 :root {
   --vert-vinted: #09b1ba;
@@ -22,7 +23,6 @@ body {
   flex-direction: column;
   width: 100vw;
   height: 100%;
-  background-color: var(--light-grey-vinted);
 }
 
 /* --- Hero --- */
@@ -36,7 +36,6 @@ body {
 /* --- Content --- */
 
 .content {
-  /* background-color: darkgray; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -98,7 +97,7 @@ OFFER PAGE
 .offer-container {
   display: flex;
   height: 100%;
-  /* background-color: yellow; */
+  background-color: var(--light-grey-vinted);
 }
 
 /* --- Picture --- */
@@ -144,4 +143,40 @@ OFFER PAGE
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+}
+
+/* ------------------
+SIGNUP PAGE
+--------------------*/
+.formsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.signUpContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-grey-vinted);
+  width: 30%;
+  height: 400px;
+  margin-top: 50px;
+}
+
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.signUpForm input {
+  height: 40px;
+  margin: 10px 0;
+}
+.checkboxNews {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

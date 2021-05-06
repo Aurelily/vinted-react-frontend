@@ -1,14 +1,28 @@
 import "./index.css";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ userToken, setUser }) => {
   return (
     <div className="header">
-      <img className="logo" src="/logo-vinted.png" alt="Logo Vinted" />
+      <Link to="/">
+        <img className="logo" src="/logo-vinted.png" alt="Logo Vinted" />
+      </Link>
+
       <input type="text" />
       <div className="buttons">
-        <div>
-          <button>S'inscrire</button>
-          <button>Se connecter</button>
+        <div className="btsHeader">
+          {userToken ? (
+            <button onClick={() => setUser(null)}>Se déconnecter</button>
+          ) : (
+            <>
+              <Link to="/signup">
+                <div>S'inscrire</div>
+              </Link>
+              <Link to="/login">
+                <div>Se connecter</div>
+              </Link>
+            </>
+          )}
         </div>
         <button>Vends tes articles</button>
       </div>
@@ -16,6 +30,3 @@ const Header = () => {
   );
 };
 export default Header;
-
-// Header avec logo + Input search + bt s'incrire + bt se connecter + bt
-//       vends tes articles

@@ -1,43 +1,51 @@
 import "./App.css";
-//Import d'Axios pour pouvoir faire des requetes vers l'API après installation via terminal : yarn add axios
-import axios from "axios";
+//Import de useState pour gérer le userToken/setUserToken
+import { useState } from "react";
+
 //Après avoir installé le package via le Terminal : yarn add react-router-dom, je l'importe ici
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// import du hook useEffect pour précharger les données de l'API et useState
-import { useState, useEffect } from "react";
+//Après avoir installé le package via le Terminal : yarn add js-cookie, je l'importe ici
+import Cookies from "js-cookie";
 
 //Import de mes containers (pages)
 import Home from "./containers/Home";
 import Offer from "./containers/Offer";
+import Signup from "./containers/Signup";
+import Login from "./containers/Login";
+
+//import de mes composants utilisés ici
+import Header from "./components/Header";
 
 function App() {
-  const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+  const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
 
-  //Chargement des données de l'API via la fonction fetchData, une seule fois au chargement du site.
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        "https://lereacteur-vinted-api.herokuapp.com/offers"
-      );
-      // console.log(response.data);
-      setData(response.data);
-      setIsLoading(false);
-    };
-    fetchData();
-  }, []);
-
-  return isLoading ? (
-    <span>En cours de chargement...</span>
-  ) : (
+  const setUser = (token) => {
+    if (token) {
+      //on crée le cookie avec le token du user
+      Cookies.set("userToken", token, { expires: 10 });
+      setUserToken(token);
+    } else {
+      //on supprime le cookie du user en cours pour se déconnecter
+      Cookies.remove("userToken");
+      setUserToken(null);
+    }
+  };
+  return (
     <Router>
+      <Header userToken={userToken} setUser={setUser} />
       <Switch>
         <Route path="/offer/:id">
-          <Offer data={data} />
+          <Offer />
+        </Route>
+        <Route path="/signup">
+          <Signup />
+        </Route>
+        <Route path="/login">
+          <Login setUser={setUser} />
         </Route>
         <Route path="/">
-          <Home data={data} />
+          <Home />
         </Route>
       </Switch>
     </Router>
