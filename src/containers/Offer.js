@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Offer = () => {
+const Offer = ({ url }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -15,14 +15,13 @@ const Offer = () => {
   //On fait une deuxième requète de sureté de mise à jour des infos avec l'id récupérée pour n'avoir que les infos de l'offre cliquée
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `https://lily-vinted.herokuapp.com/offer/${id}`
-      );
+      const response = await axios.get(`${url}offer/${id}`);
       setData(response.data);
+      console.log(response.data);
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return isLoading ? (
     <span>En cours de chargement...</span>

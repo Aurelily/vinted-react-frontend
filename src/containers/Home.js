@@ -5,22 +5,20 @@ import { Link } from "react-router-dom";
 //import useState
 import { useState, useEffect } from "react";
 
-const Home = () => {
+const Home = ({ url }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   //Chargement des données de l'API via la fonction fetchData, une seule fois au chargement du site.
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        "https://lily-vinted.herokuapp.com/offers"
-      );
+      const response = await axios.get(`${url}offers`);
       console.log(response.data);
       setData(response.data);
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [url]);
 
   return isLoading ? (
     <span>En cours de chargement...</span>

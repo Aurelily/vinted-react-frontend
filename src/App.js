@@ -17,6 +17,10 @@ import Login from "./containers/Login";
 //import de mes composants utilisés ici
 import Header from "./components/Header";
 
+//variable URL
+// const url = "http://localhost:3000/";
+const url = "https://lily-vinted.herokuapp.com/";
+
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
 
@@ -36,7 +40,7 @@ function App() {
       <Header userToken={userToken} setUser={setUser} />
       <Switch>
         <Route path="/offer/:id">
-          <Offer />
+          <Offer url={url} />
         </Route>
         <Route path="/signup">
           <Signup setUser={setUser} />
@@ -45,7 +49,7 @@ function App() {
           <Login setUser={setUser} />
         </Route>
         <Route path="/">
-          <Home />
+          <Home url={url} />
         </Route>
       </Switch>
     </Router>
