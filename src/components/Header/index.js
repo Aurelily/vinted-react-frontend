@@ -8,7 +8,11 @@ const Header = ({ userToken, setUser }) => {
         <img className="logo" src="/logo-vinted.png" alt="Logo Vinted" />
       </Link>
 
-      <input type="text" />
+      <input
+        className="searchBar"
+        type="text"
+        placeholder="recherche des articles"
+      />
       <div className="buttons">
         <div className="btsHeader">
           {userToken ? (
