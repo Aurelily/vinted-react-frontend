@@ -8,30 +8,39 @@ import axios from "axios";
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    //Je passe mes datas à envoyer à l'API
-    const data = {
-      email: email,
-      password: password,
-    };
-    //Je me connecte à l'API
-    const response = await axios.post(
-      "https://lily-vinted.herokuapp.com/user/login",
-      data
-    );
-    console.log(response);
-    //   Je crée le cookie avec le token attribué
-    setUser(response.data.token);
+    try {
+      //Je passe mes datas à envoyer à l'API
+      const data = {
+        email: email,
+        password: password,
+      };
+      //Je me connecte à l'API
+      const response = await axios.post(
+        "https://lily-vinted.herokuapp.com/user/login",
+        data
+      );
+      console.log(response);
+      //   Je crée le cookie avec le token attribué
+      setUser(response.data.token);
 
-    //Je gère l'erreur si le formulaire n'est pas valide
-    if (response.status !== 200) {
-      alert("Unauthorized");
-    } else {
-      history.push("/");
+      //Je gère l'erreur si la création du token n'a pas fonctionné
+      if (response.data.token) {
+        setUser(response.data.token);
+        history.push("/");
+      } else {
+        setErrorMessage("Une erreur est survenue.");
+      }
+    } catch (error) {
+      if (error.response.status === 401) {
+        setErrorMessage("Mauvais email et/ou mot de passe");
+      }
+      console.log(error.message);
     }
   };
 
@@ -39,6 +48,7 @@ const Login = ({ setUser }) => {
     <div className="formsContainer">
       <div className="loginContent">
         <h1>Se connecter</h1>
+        <div className="error">{errorMessage}</div>
         <form onSubmit={handleSubmit} className="signUpForm">
           <input
             type="email"

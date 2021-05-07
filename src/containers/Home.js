@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://lereacteur-vinted-api.herokuapp.com/offers"
+        "https://lily-vinted.herokuapp.com/offers"
       );
       console.log(response.data);
       setData(response.data);
@@ -44,7 +44,7 @@ const Home = () => {
                   </div>
                   <img
                     className="product-img"
-                    src={offer.product_pictures[0].secure_url}
+                    src={offer.product_image.secure_url}
                     alt=""
                   />
                   <div className="product-price">{`${offer.product_price} €`}</div>
