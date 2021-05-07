@@ -155,7 +155,8 @@ SIGNUP PAGE
   align-items: center;
   height: 100%;
 }
-.signUpContent {
+.signUpContent,
+.loginContent {
   display: flex;
   flex-direction: column;
   justify-content: center;

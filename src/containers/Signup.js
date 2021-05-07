@@ -1,33 +1,37 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Signup = ({ setUser }) => {
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     //Je passe mes datas à envoyer à l'API
     const data = {
-      name: name,
+      username: username,
       email: email,
       password: password,
     };
     //Je me connecte à l'API
     const response = await axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+      "https://lily-vinted.herokuapp.com/user/signup",
       data
     );
     console.log(response);
+    //   Je crée le cookie avec le token attribué
+    setUser(response.data.token);
 
     //Je gère l'erreur si le formulaire n'est pas valide
     if (response.status !== 200) {
       alert("Le formulaire n'a pu être envoyé");
     } else {
-      //   Je crée le cookie avec le token attribué
-      setUser(data.token);
+      alert("Merci de votre inscription");
+      history.push("/");
     }
   };
 
@@ -41,10 +45,10 @@ const Signup = ({ setUser }) => {
             placeholder="Nom d'utilisateur"
             id="name"
             name="name"
-            value={name}
+            value={username}
             required
             onChange={(event) => {
-              setName(event.target.value);
+              setUsername(event.target.value);
             }}
           />
           <input
