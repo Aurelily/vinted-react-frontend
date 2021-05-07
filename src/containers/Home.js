@@ -37,7 +37,7 @@ const Home = () => {
                   <div className="owner">
                     <img
                       className="avatar"
-                      src={offer.owner.account.avatar.secure_url}
+                      src={offer.owner.account.avatarPath.secure_url}
                       alt=""
                     />
                     <span>{offer.owner.account.username}</span>
