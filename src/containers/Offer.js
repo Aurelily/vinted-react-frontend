@@ -21,7 +21,7 @@ const Offer = ({ url }) => {
       setIsLoading(false);
     };
     fetchData();
-  }, [id]);
+  }, [id, url]);
 
   return isLoading ? (
     <span>En cours de chargement...</span>
@@ -52,7 +52,7 @@ const Offer = ({ url }) => {
               <div className="infos-owner">
                 <img
                   className="avatar"
-                  src={data.owner.account.avatarPath.secure_url}
+                  src={data.owner.account.avatarPath}
                   alt=""
                 />
                 <span>{data.owner.account.username}</span>

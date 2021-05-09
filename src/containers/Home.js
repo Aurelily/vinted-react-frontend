@@ -8,17 +8,19 @@ import { useState, useEffect } from "react";
 const Home = ({ url }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [priceSort, setPriceSort] = useState("price-asc");
 
-  //Chargement des données de l'API via la fonction fetchData, une seule fois au chargement du site.
+  //Chargement des données de l'API via la fonction fetchData
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`${url}offers`);
+      const response = await axios.get(`${url}offers/?sort=${priceSort}`);
       console.log(response.data);
       setData(response.data);
       setIsLoading(false);
+      setPriceSort(priceSort);
     };
     fetchData();
-  }, [url]);
+  }, [url, priceSort]);
 
   return isLoading ? (
     <span>En cours de chargement...</span>
@@ -35,7 +37,7 @@ const Home = ({ url }) => {
                   <div className="owner">
                     <img
                       className="avatar"
-                      src={offer.owner.account.avatarPath.secure_url}
+                      src={offer.owner.account.avatarPath}
                       alt=""
                     />
                     <span>{offer.owner.account.username}</span>

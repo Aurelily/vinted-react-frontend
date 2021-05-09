@@ -37,7 +37,7 @@ function App() {
   };
   return (
     <Router>
-      <Header userToken={userToken} setUser={setUser} />
+      <Header userToken={userToken} setUser={setUser} url={url} />
       <Switch>
         <Route path="/offer/:id">
           <Offer url={url} />
