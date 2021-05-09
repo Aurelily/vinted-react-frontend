@@ -23,6 +23,7 @@ const url = "https://lily-vinted.herokuapp.com/";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  const [priceSort, setPriceSort] = useState("price-desc");
 
   const setUser = (token) => {
     if (token) {
@@ -37,7 +38,13 @@ function App() {
   };
   return (
     <Router>
-      <Header userToken={userToken} setUser={setUser} url={url} />
+      <Header
+        userToken={userToken}
+        setUser={setUser}
+        url={url}
+        priceSort={priceSort}
+        setPriceSort={setPriceSort}
+      />
       <Switch>
         <Route path="/offer/:id">
           <Offer url={url} />
@@ -49,7 +56,7 @@ function App() {
           <Login setUser={setUser} />
         </Route>
         <Route path="/">
-          <Home url={url} />
+          <Home url={url} priceSort={priceSort} setPriceSort={setPriceSort} />
         </Route>
       </Switch>
     </Router>

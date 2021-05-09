@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 //import useState
 import { useState, useEffect } from "react";
 
-const Home = ({ url }) => {
+const Home = ({ url, priceSort, setPriceSort }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [priceSort, setPriceSort] = useState("price-asc");
 
   //Chargement des données de l'API via la fonction fetchData
   useEffect(() => {
@@ -20,7 +19,7 @@ const Home = ({ url }) => {
       setPriceSort(priceSort);
     };
     fetchData();
-  }, [url, priceSort]);
+  }, [url, priceSort, setPriceSort]);
 
   return isLoading ? (
     <span>En cours de chargement...</span>

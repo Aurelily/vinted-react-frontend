@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faSearch, faSortUp, faSortDown);
 
-const Header = ({ userToken, setUser, url }) => {
+const Header = ({ userToken, setUser, url, priceSort, setPriceSort }) => {
   return (
     <div className="header">
       <Link to="/">
@@ -27,7 +27,7 @@ const Header = ({ userToken, setUser, url }) => {
         </div>
         <div className="switchBar">
           <span>Tri par prix :</span>
-          <SwitchBar url={url} />
+          <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
         </div>
         {/* <Slider /> */}
       </div>
