@@ -1,3 +1,5 @@
+import "./index.css";
+
 import Switch from "react-switch";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

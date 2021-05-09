@@ -61,43 +61,12 @@ HEADER
 
 /* ---Filters and sort---*/
 
+.filtersBar {
+  display: flex;
+  align-items: center;
+}
+
 .searchFilter {
   display: flex;
   flex-direction: column;
-}
-
-.react-switch {
-  vertical-align: middle;
-  margin-left: 4px;
-}
-
-/* ---Switch---*/
-
-.switchBar {
-  font-size: 12px;
-  width: 150px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background-color: red; */
-  margin-left: 20px;
-}
-
-.txtSort {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-size: 10px;
-  font-weight: bold;
-  color: white;
-  margin: 0 5px;
-}
-
-.iconSort {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-size: 30px;
 }

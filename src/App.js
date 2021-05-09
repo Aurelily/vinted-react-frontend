@@ -24,6 +24,8 @@ const url = "https://lily-vinted.herokuapp.com/";
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
   const [priceSort, setPriceSort] = useState("price-desc");
+  const [priceMax, setPriceMax] = useState(200);
+  const [priceMin, setPriceMin] = useState(0);
 
   const setUser = (token) => {
     if (token) {
@@ -44,6 +46,10 @@ function App() {
         url={url}
         priceSort={priceSort}
         setPriceSort={setPriceSort}
+        priceMax={priceMax}
+        setPriceMax={setPriceMax}
+        priceMin={priceMin}
+        setPriceMin={setPriceMin}
       />
       <Switch>
         <Route path="/offer/:id">
@@ -56,7 +62,15 @@ function App() {
           <Login setUser={setUser} />
         </Route>
         <Route path="/">
-          <Home url={url} priceSort={priceSort} setPriceSort={setPriceSort} />
+          <Home
+            url={url}
+            priceSort={priceSort}
+            setPriceSort={setPriceSort}
+            priceMax={priceMax}
+            setPriceMax={setPriceMax}
+            priceMin={priceMin}
+            setPriceMin={setPriceMin}
+          />
         </Route>
       </Switch>
     </Router>

@@ -2,7 +2,7 @@ import "./index.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// import Slider from "../Slider";
+import Slider from "../Slider";
 import SwitchBar from "../SwitchBar";
 
 //import FontAwsome
@@ -14,7 +14,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faSearch, faSortUp, faSortDown);
 
-const Header = ({ userToken, setUser, url, priceSort, setPriceSort }) => {
+const Header = ({
+  userToken,
+  setUser,
+  priceSort,
+  setPriceSort,
+  priceMax,
+  setPriceMax,
+  priceMin,
+  setPriceMin,
+}) => {
   return (
     <div className="header">
       <Link to="/">
@@ -25,11 +34,18 @@ const Header = ({ userToken, setUser, url, priceSort, setPriceSort }) => {
           <FontAwesomeIcon icon="search" color="grey" />
           <input type="text" placeholder="recherche des articles" />
         </div>
-        <div className="switchBar">
-          <span>Tri par prix :</span>
-          <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
+        <div className="filtersBar">
+          <div className="switchBar">
+            <span>Tri par prix :</span>
+            <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
+          </div>
+          <Slider
+            priceMax={priceMax}
+            setPriceMax={setPriceMax}
+            priceMin={priceMin}
+            setPriceMin={setPriceMin}
+          />
         </div>
-        {/* <Slider /> */}
       </div>
 
       <div className="buttons">
