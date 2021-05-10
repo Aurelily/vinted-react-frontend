@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 //import FontAwsome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,10 +9,9 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 library.add(faPlus);
 
 const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
-  filtersShow = false;
-  setFiltersShow(filtersShow);
+  //   filtersShow = false;
+  //   setFiltersShow(filtersShow);
 
-  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   const [title, setTitle] = useState("");
@@ -23,7 +22,9 @@ const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState(0);
-  const [picture, setPicture] = useState();
+  const [picture, setPicture] = useState({});
+
+  const history = useHistory();
 
   const handleSubmit = async (event) => {
     try {
@@ -45,8 +46,11 @@ const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
       const response = await axios.post(`${url}offer/publish`, formData, {
         headers: { authorization: `Bearer ${userToken}` },
       });
-      setData(response.data);
-      console.log(response.data);
+
+      if (response.data._id) {
+        history.push(`/offer/${response.data._id}`);
+      }
+
       setIsLoading(false);
     } catch (error) {
       console.log(error.message);
@@ -65,11 +69,11 @@ const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
                 name="file"
                 onChange={(event) => setPicture(event.target.files[0])}
               />
-              {isLoading ? (
+              {/* {isLoading ? (
                 <span>En cours de chargement...</span>
               ) : (
                 <img src={data.secure_url} alt={data.name} />
-              )}
+              )} */}
               {/* <div className="btAddPhoto">
                 <label for="file" className="label-file">
                   <div className="sign">

@@ -19,8 +19,8 @@ const Home = ({
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
-  filtersShow = true;
-  setFiltersShow(filtersShow);
+  // filtersShow = true;
+  // setFiltersShow(filtersShow);
 
   //Chargement des données de l'API via la fonction fetchData
   useEffect(() => {

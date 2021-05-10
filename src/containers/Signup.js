@@ -10,8 +10,8 @@ const Signup = ({ setUser, filtersShow, setFiltersShow }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const history = useHistory();
 
-  filtersShow = false;
-  setFiltersShow(filtersShow);
+  // filtersShow = false;
+  // setFiltersShow(filtersShow);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,7 +24,7 @@ const Signup = ({ setUser, filtersShow, setFiltersShow }) => {
       };
       //Je me connecte à l'API
       const response = await axios.post(
-        "https://lily-vinted.herokuapp.com/user/signup",
+        "http://localhost:3001/user/signup",
         data
       );
       console.log(response);
