@@ -1,6 +1,5 @@
 import "./index.css";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Slider from "../Slider";
 import SwitchBar from "../SwitchBar";
@@ -24,6 +23,7 @@ const Header = ({
   setPriceMax,
   priceMin,
   setPriceMin,
+  filtersShow,
 }) => {
   return (
     <div className="header">
@@ -32,18 +32,20 @@ const Header = ({
       </Link>
       <div className="searchFilter">
         <SearchBar />
-        <div className="filtersBar">
-          <div className="switchBar">
-            <span>Tri par prix :</span>
-            <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
+        {filtersShow && (
+          <div className="filtersBar">
+            <div className="switchBar">
+              <span>Tri par prix :</span>
+              <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
+            </div>
+            <Slider
+              priceMax={priceMax}
+              setPriceMax={setPriceMax}
+              priceMin={priceMin}
+              setPriceMin={setPriceMin}
+            />
           </div>
-          <Slider
-            priceMax={priceMax}
-            setPriceMax={setPriceMax}
-            priceMin={priceMin}
-            setPriceMin={setPriceMin}
-          />
-        </div>
+        )}
       </div>
 
       <div className="buttons">
@@ -63,7 +65,9 @@ const Header = ({
             </>
           )}
         </div>
-        <button className="btBlue">Vends tes articles</button>
+        <Link to="/publish">
+          <div className="btBlue">Vends tes articles</div>
+        </Link>
       </div>
     </div>
   );

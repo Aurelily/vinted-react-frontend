@@ -60,6 +60,46 @@ HEADER
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+/* --- Hero --- */
+
+.hero {
+  background: center / cover no-repeat url("/src/assets/img/hero01.jpg");
+  height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.tear {
+  position: absolute;
+  bottom: -5px;
+  right: 0px;
+  /* background-color: red; */
+  height: 20%;
+  width: 100%;
+}
+
+.home-hero-ready {
+  background-color: #fff;
+  border: solid 1px var(--light-grey-vinted);
+  border-radius: 5px;
+  height: 220px;
+  width: 360px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  font-size: 34px;
+  line-height: 45px;
+}
+
+.home-hero-ready button {
+  width: 70%;
+  height: 40px;
+  font-size: 18px;
+  margin-top: 30px;
 }
 
 /* ---Filters and sort---*/

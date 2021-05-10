@@ -30,21 +30,8 @@ a {
   text-decoration: none;
 }
 
-/* --- Hero --- */
-
-.hero {
-  background: center / cover no-repeat url("./assets/img/hero01.jpg");
-  height: 500px;
-  display: flex;
-  position: relative;
-}
-.tear {
-  position: absolute;
-  bottom: -5px;
-  right: 0px;
-  /* background-color: red; */
-  height: 20%;
-  width: 100%;
+h1 {
+  font-size: 24px;
 }
 
 /* --- Content --- */
@@ -119,7 +106,7 @@ SIGNUP et LOGIN PAGE
 .formsContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
 }
@@ -129,8 +116,8 @@ SIGNUP et LOGIN PAGE
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--light-grey-vinted);
-  width: 30%;
+  /* background-color: var(--light-grey-vinted); */
+  width: 25%;
   height: 400px;
   margin-top: 50px;
 }
@@ -138,14 +125,150 @@ SIGNUP et LOGIN PAGE
 .signUpForm {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+}
+
+.signUpForm a {
+  color: var(--vert-vinted);
+  font-size: 12px;
 }
 
 .signUpForm input {
-  height: 40px;
-  margin: 10px 0;
+  height: 35px;
+  margin: 20px 0;
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  font-size: 16px;
 }
-.checkboxNews {
+
+.signUpForm button {
+  font-size: 16px;
+  width: 70%;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.checkboxNews,
+.linksConnect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.checkboxNews input {
+  transform: scale(2);
+  margin-right: 20px;
+}
+
+.checkboxAndLabel {
   display: flex;
   align-items: center;
+}
+
+.infosAccept {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+/* ------------------
+PUBLISH PAGE
+--------------------*/
+.publish-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--light-grey-vinted);
+}
+
+/*--- Add photo ---*/
+
+.file-select {
+  background-color: #fff;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 0 2px grey;
+}
+.dash-preview-without {
+  border: 1px dashed #ebedee;
+  border-radius: 3px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btAddPhoto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--vert-vinted);
+  border-radius: 4px;
+  height: 45px;
+  background-color: #fff;
+  color: var(--vert-vinted);
+  font-size: 16px;
+  font-weight: bold;
+  width: 200px;
+  cursor: pointer;
+}
+
+.sign {
+  margin-right: 10px;
+}
+
+.label-file {
+  color: var(--vert-vinted);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.input-file {
+  appearance: none;
+  display: none;
+  outline: none;
+  background-color: initial;
+  cursor: default;
+  align-items: baseline;
+  color: inherit;
+  text-overflow: ellipsis;
+  white-space: pre;
+  text-align: start !important;
+  padding: initial;
+  border: initial;
+  overflow: hidden !important;
+}
+
+/*--- Other sections ---*/
+
+.text-input-section {
+  background-color: #fff;
+  margin: 20px 0;
+  box-shadow: 0 0 2px grey;
+}
+.text-input {
+  display: flex;
   justify-content: space-between;
+  padding: 24px;
+}
+.text-input > input {
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: #000;
+  font-family: inherit;
+  font-size: 16px;
+}
+.checkbox-section {
+  width: 50%;
+}
+.checkbox-section > input {
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: #000;
+  font-family: inherit;
+  font-size: 16px;
+  margin-bottom: 40px;
 }

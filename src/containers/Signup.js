@@ -3,12 +3,15 @@ import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-const Signup = ({ setUser }) => {
+const Signup = ({ setUser, filtersShow, setFiltersShow }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const history = useHistory();
+
+  filtersShow = false;
+  setFiltersShow(filtersShow);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -85,12 +88,23 @@ const Signup = ({ setUser }) => {
             }}
           />
           <div className="checkboxNews">
-            <input type="checkbox" id="newsletter" name="newsletter" />
-            <span>S'inscrire à notre newsletter</span>
-          </div>
+            <div className="checkboxAndLabel">
+              <input type="checkbox" id="newsletter" name="newsletter" />
+              <span>S'inscrire à notre newsletter</span>
+            </div>
 
-          <button id="bt-signup">S'inscrire</button>
-          <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+            <div className="infosAccept">
+              <p>
+                En m'inscrivant je confirme avoir lu et accepté les Termes &
+                Conditions et Politique de Confidentialité de Vinted. Je
+                confirme avoir au moins 18 ans.
+              </p>
+            </div>
+            <button id="bt-signup" className="btBlue">
+              S'inscrire
+            </button>
+            <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+          </div>
         </form>
       </div>
     </div>

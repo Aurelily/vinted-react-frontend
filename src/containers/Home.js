@@ -1,7 +1,5 @@
 //Import d'Axios pour pouvoir faire des requetes vers l'API après installation via terminal : yarn add axios
 import axios from "axios";
-//import de la methode Link pour insérer des liens de navigation
-import { Link } from "react-router-dom";
 //import useState
 import { useState, useEffect } from "react";
 //import composants utilisés
@@ -15,9 +13,14 @@ const Home = ({
   setPriceMax,
   priceMin,
   setPriceMin,
+  filtersShow,
+  setFiltersShow,
 }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
+  filtersShow = true;
+  setFiltersShow(filtersShow);
 
   //Chargement des données de l'API via la fonction fetchData
   useEffect(() => {
@@ -48,8 +51,11 @@ const Home = ({
   ) : (
     <div className="container">
       <div className="hero">
-        {/* <div className="tear"></div> */}
         <img className="tear" src="/tear.svg" alt="" />
+        <div className="home-hero-ready">
+          <p>Prêts à faire du tri dans vos placards ?</p>
+          <button className="btBlue">Commencer à vendre</button>
+        </div>
       </div>
       <div className="content">
         {data.offers.map((offer, index) => {

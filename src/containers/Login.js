@@ -5,10 +5,13 @@ import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
-const Login = ({ setUser }) => {
+const Login = ({ setUser, filtersShow, setFiltersShow }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  filtersShow = false;
+  setFiltersShow(filtersShow);
 
   const history = useHistory();
 
@@ -72,8 +75,12 @@ const Login = ({ setUser }) => {
               setPassword(event.target.value);
             }}
           />
-          <button id="bt-login">Se connecter</button>
-          <Link to="/signup">Tu n'as pas de compte ? Inscris-toi !</Link>
+          <div className="linksConnect">
+            <button id="bt-login" className="btBlue">
+              Se connecter
+            </button>
+            <Link to="/signup">Tu n'as pas de compte ? Inscris-toi !</Link>
+          </div>
         </form>
       </div>
     </div>

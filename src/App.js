@@ -13,6 +13,7 @@ import Home from "./containers/Home";
 import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
+import Publish from "./containers/Publish";
 
 //import de mes composants utilisés ici
 import Header from "./components/Header";
@@ -26,6 +27,7 @@ function App() {
   const [priceSort, setPriceSort] = useState("price-desc");
   const [priceMax, setPriceMax] = useState(200);
   const [priceMin, setPriceMin] = useState(0);
+  const [filtersShow, setFiltersShow] = useState(true);
 
   const setUser = (token) => {
     if (token) {
@@ -50,16 +52,32 @@ function App() {
         setPriceMax={setPriceMax}
         priceMin={priceMin}
         setPriceMin={setPriceMin}
+        filtersShow={filtersShow}
       />
       <Switch>
         <Route path="/offer/:id">
           <Offer url={url} />
         </Route>
         <Route path="/signup">
-          <Signup setUser={setUser} />
+          <Signup
+            setUser={setUser}
+            filtersShow={filtersShow}
+            setFiltersShow={setFiltersShow}
+          />
         </Route>
         <Route path="/login">
-          <Login setUser={setUser} />
+          <Login
+            setUser={setUser}
+            filtersShow={filtersShow}
+            setFiltersShow={setFiltersShow}
+          />
+        </Route>
+        <Route path="/publish">
+          <Publish
+            setUser={setUser}
+            filtersShow={filtersShow}
+            setFiltersShow={setFiltersShow}
+          />
         </Route>
         <Route path="/">
           <Home
@@ -70,6 +88,8 @@ function App() {
             setPriceMax={setPriceMax}
             priceMin={priceMin}
             setPriceMin={setPriceMin}
+            filtersShow={filtersShow}
+            setFiltersShow={setFiltersShow}
           />
         </Route>
       </Switch>
