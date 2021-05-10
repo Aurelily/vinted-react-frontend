@@ -42,7 +42,7 @@ const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
       formData.append("price", price);
       formData.append("picture", picture);
 
-      const response = await axios.post(`${url}offers/publish`, formData, {
+      const response = await axios.post(`${url}offer/publish`, formData, {
         headers: { authorization: `Bearer ${userToken}` },
       });
       setData(response.data);
