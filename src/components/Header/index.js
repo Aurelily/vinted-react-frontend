@@ -49,21 +49,23 @@ const Header = ({
       </div>
 
       <div className="buttons">
-        <div className="btsHeader">
+        <div className="btsConnect">
           {userToken ? (
-            <button onClick={() => setUser(null)}>Se déconnecter</button>
+            <button className="btWhite" onClick={() => setUser(null)}>
+              Se déconnecter
+            </button>
           ) : (
             <>
               <Link to="/signup">
-                <div>S'inscrire</div>
+                <div className="btWhite">S'inscrire</div>
               </Link>
               <Link to="/login">
-                <div>Se connecter</div>
+                <div className="btWhite">Se connecter</div>
               </Link>
             </>
           )}
         </div>
-        <button>Vends tes articles</button>
+        <button className="btBlue">Vends tes articles</button>
       </div>
     </div>
   );

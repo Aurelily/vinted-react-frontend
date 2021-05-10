@@ -23,16 +23,43 @@ HEADER
 .buttons {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  /* background-color: red; */
+  width: 100%;
 }
 
-.btsHeader {
+.btsConnect {
   display: flex;
   flex-direction: row;
-  width: 400px;
+  align-items: center;
+  width: 100%;
 }
 
-.btsHeader div {
-  margin: 0 20px;
+.btsConnect div {
+  margin: 0 10px;
+}
+.btWhite {
+  background-color: #fff;
+  border: 1px solid var(--vert-vinted);
+  color: var(--vert-vinted);
+}
+
+.btBlue {
+  background-color: var(--vert-vinted);
+  border: 1px solid var(--vert-vinted);
+  color: white;
+}
+
+.btWhite,
+.btBlue {
+  text-decoration: none;
+  font-size: 12px;
+  height: 30px;
+  min-width: 115px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ---Search bar ---*/
