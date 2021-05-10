@@ -6,8 +6,8 @@ import { Range } from "react-range";
 const Slider = ({ priceMax, setPriceMax, priceMin, setPriceMin }) => {
   return (
     <div className="range-slider">
-      <span>{`priceMax : ${priceMax}`}</span>
       <span>{`priceMin : ${priceMin}`}</span>
+      <span>{`priceMax : ${priceMax}`}</span>
     </div>
   );
 };

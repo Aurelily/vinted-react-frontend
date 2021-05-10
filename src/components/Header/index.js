@@ -12,6 +12,7 @@ import {
   faSortUp,
   faSortDown,
 } from "@fortawesome/free-solid-svg-icons";
+import SearchBar from "../SearchBar";
 library.add(faSearch, faSortUp, faSortDown);
 
 const Header = ({
@@ -30,10 +31,7 @@ const Header = ({
         <img className="logo" src="/logo-vinted.png" alt="Logo Vinted" />
       </Link>
       <div className="searchFilter">
-        <div className="searchBar">
-          <FontAwesomeIcon icon="search" color="grey" />
-          <input type="text" placeholder="recherche des articles" />
-        </div>
+        <SearchBar />
         <div className="filtersBar">
           <div className="switchBar">
             <span>Tri par prix :</span>

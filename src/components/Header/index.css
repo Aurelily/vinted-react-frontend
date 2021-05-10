@@ -62,30 +62,6 @@ HEADER
   justify-content: center;
 }
 
-/* ---Search bar ---*/
-
-.searchBar {
-  border: none;
-  background-color: #f5f6f7;
-  border-radius: 5px;
-  height: 40px;
-  width: 590px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 10px;
-  padding: 10px;
-  display: flex;
-}
-.searchBar input {
-  border: none;
-  background-color: #f5f6f7;
-  height: 100%;
-  width: 100%;
-  font-family: inherit;
-  font-size: 18px;
-  margin-left: 10px;
-}
-
 /* ---Filters and sort---*/
 
 .filtersBar {
