@@ -226,9 +226,7 @@ PUBLISH PAGE
 }
 
 .input-file {
-  appearance: none;
   display: none;
-  outline: none;
   background-color: initial;
   cursor: default;
   align-items: baseline;

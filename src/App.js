@@ -74,7 +74,8 @@ function App() {
         </Route>
         <Route path="/publish">
           <Publish
-            setUser={setUser}
+            url={url}
+            userToken={userToken}
             filtersShow={filtersShow}
             setFiltersShow={setFiltersShow}
           />

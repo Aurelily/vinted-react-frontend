@@ -65,9 +65,15 @@ const Header = ({
             </>
           )}
         </div>
-        <Link to="/publish">
-          <div className="btBlue">Vends tes articles</div>
-        </Link>
+        {userToken ? (
+          <Link to="/publish">
+            <div className="btBlue">Vends tes articles</div>
+          </Link>
+        ) : (
+          <Link to="/signup">
+            <div className="btBlue">Vends tes articles</div>
+          </Link>
+        )}
       </div>
     </div>
   );

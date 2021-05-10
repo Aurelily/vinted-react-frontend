@@ -60,7 +60,7 @@ const Home = ({
       <div className="content">
         {data.offers.map((offer, index) => {
           // console.log(offer);
-          return <OfferCard offer={offer} />;
+          return <OfferCard key={index} offer={offer} />;
         })}
       </div>
     </div>
