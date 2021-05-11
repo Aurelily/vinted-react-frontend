@@ -23,7 +23,6 @@ const Header = ({
   setPriceMax,
   priceMin,
   setPriceMin,
-  filtersShow,
 }) => {
   return (
     <div className="header">
@@ -32,20 +31,19 @@ const Header = ({
       </Link>
       <div className="searchFilter">
         <SearchBar />
-        {filtersShow && (
-          <div className="filtersBar">
-            <div className="switchBar">
-              <span>Tri par prix :</span>
-              <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
-            </div>
-            <Slider
-              priceMax={priceMax}
-              setPriceMax={setPriceMax}
-              priceMin={priceMin}
-              setPriceMin={setPriceMin}
-            />
+
+        <div className="filtersBar">
+          <div className="switchBar">
+            <span>Tri par prix :</span>
+            <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
           </div>
-        )}
+          <Slider
+            priceMax={priceMax}
+            setPriceMax={setPriceMax}
+            priceMin={priceMin}
+            setPriceMin={setPriceMin}
+          />
+        </div>
       </div>
 
       <div className="buttons">
@@ -65,15 +63,10 @@ const Header = ({
             </>
           )}
         </div>
-        {userToken ? (
-          <Link to="/publish">
-            <div className="btBlue">Vends tes articles</div>
-          </Link>
-        ) : (
-          <Link to="/signup">
-            <div className="btBlue">Vends tes articles</div>
-          </Link>
-        )}
+
+        <Link to="/publish">
+          <div className="btBlue">Vends tes articles</div>
+        </Link>
       </div>
     </div>
   );

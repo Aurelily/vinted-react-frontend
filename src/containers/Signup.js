@@ -3,15 +3,12 @@ import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-const Signup = ({ setUser, filtersShow, setFiltersShow }) => {
+const Signup = ({ url, setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const history = useHistory();
-
-  // filtersShow = false;
-  // setFiltersShow(filtersShow);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,10 +20,7 @@ const Signup = ({ setUser, filtersShow, setFiltersShow }) => {
         password: password,
       };
       //Je me connecte à l'API
-      const response = await axios.post(
-        "http://localhost:3001/user/signup",
-        data
-      );
+      const response = await axios.post(`${url}user/signup`, data);
       console.log(response);
       //   Je crée le cookie avec le token attribué
       setUser(response.data.token);

@@ -5,13 +5,10 @@ import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
-const Login = ({ setUser, filtersShow, setFiltersShow }) => {
+const Login = ({ url, setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
-  // filtersShow = false;
-  // setFiltersShow(filtersShow);
 
   const history = useHistory();
 
@@ -24,10 +21,7 @@ const Login = ({ setUser, filtersShow, setFiltersShow }) => {
         password: password,
       };
       //Je me connecte à l'API
-      const response = await axios.post(
-        "http://localhost:3001/user/login",
-        data
-      );
+      const response = await axios.post(`${url}user/login`, data);
       console.log(response);
       //   Je crée le cookie avec le token attribué
       setUser(response.data.token);

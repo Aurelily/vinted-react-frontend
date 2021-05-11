@@ -1,19 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 
-//import FontAwsome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-library.add(faPlus);
+// //import FontAwsome
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { faPlus } from "@fortawesome/free-solid-svg-icons";
+// library.add(faPlus);
 
-const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
-  //   filtersShow = false;
-  //   setFiltersShow(filtersShow);
-
-  const [isLoading, setIsLoading] = useState(true);
-
+const Publish = ({ url, userToken }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [brand, setBrand] = useState("");
@@ -50,13 +45,12 @@ const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
       if (response.data._id) {
         history.push(`/offer/${response.data._id}`);
       }
-
-      setIsLoading(false);
     } catch (error) {
       console.log(error.message);
     }
   };
-  return (
+
+  return userToken ? (
     <div className="container">
       <div className="publish-container">
         <h1>Vends ton article</h1>
@@ -66,14 +60,10 @@ const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
               <input
                 type="file"
                 id="file"
-                name="file"
                 onChange={(event) => setPicture(event.target.files[0])}
+                // onChange={handleImg}
               />
-              {/* {isLoading ? (
-                <span>En cours de chargement...</span>
-              ) : (
-                <img src={data.secure_url} alt={data.name} />
-              )} */}
+              {/* {picture && <img src={URL.createObjectURL(picture)} />} */}
               {/* <div className="btAddPhoto">
                 <label for="file" className="label-file">
                   <div className="sign">
@@ -104,10 +94,11 @@ const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
             </div>
             <div className="text-input">
               <h4>Décris ton article</h4>
-              <input
-                type="text"
+              <textarea
                 id="description"
                 name="description"
+                row="20"
+                cols="80"
                 placeholder="ex.porté quelque fois, taille correctement"
                 onChange={(event) => setDescription(event.target.value)}
               />
@@ -197,6 +188,8 @@ const Publish = ({ url, userToken, filtersShow, setFiltersShow }) => {
         </form>
       </div>
     </div>
+  ) : (
+    <Redirect to="/login/" />
   );
 };
 

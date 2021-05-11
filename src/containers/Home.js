@@ -13,14 +13,9 @@ const Home = ({
   setPriceMax,
   priceMin,
   setPriceMin,
-  filtersShow,
-  setFiltersShow,
 }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
-  // filtersShow = true;
-  // setFiltersShow(filtersShow);
 
   //Chargement des données de l'API via la fonction fetchData
   useEffect(() => {
@@ -59,7 +54,7 @@ const Home = ({
       </div>
       <div className="content">
         {data.offers.map((offer, index) => {
-          // console.log(offer);
+          console.log(data.offers);
           return <OfferCard key={index} offer={offer} />;
         })}
       </div>

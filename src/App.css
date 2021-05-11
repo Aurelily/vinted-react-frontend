@@ -22,7 +22,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: 100%;
 }
 
@@ -251,7 +251,8 @@ PUBLISH PAGE
   justify-content: space-between;
   padding: 24px;
 }
-.text-input > input {
+.text-input > input,
+.text-input > textarea {
   width: 50%;
   border: none;
   border-bottom: 1px solid #ebedee;
