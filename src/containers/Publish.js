@@ -180,10 +180,7 @@ const Publish = ({ url, userToken }) => {
             </div>
           </div>
           <div className="form-button-div">
-            {/* <Link to={`/offer/${offer._id}`}> */}
-            <input type="submit" className="btBlue" />
-
-            {/* </Link> */}
+            <input type="submit" className="btBlue" value="Publier" />
           </div>
         </form>
       </div>

@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 //import composants utilisés
 import OfferCard from "../components/OfferCard";
 
+import { Link } from "react-router-dom";
+
 const Home = ({
   url,
   priceSort,
@@ -49,7 +51,9 @@ const Home = ({
         <img className="tear" src="/tear.svg" alt="" />
         <div className="home-hero-ready">
           <p>Prêts à faire du tri dans vos placards ?</p>
-          <button className="btBlue">Commencer à vendre</button>
+          <Link to="/publish">
+            <div className="btBlue home-hero-ready-bt">Commencer à vendre</div>
+          </Link>
         </div>
       </div>
       <div className="content">

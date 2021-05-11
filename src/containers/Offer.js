@@ -1,15 +1,20 @@
 //import du hook useParams pour récupérer des paramètres passés dans les URLs
-import { useParams } from "react-router-dom";
+//import useHistory pour passer les infos d'une offre de la page offer à la page payment
+import { useParams, useHistory } from "react-router-dom";
+
+//import useHistory pour passer les infos d'une offre de la page offer à la page payment
 
 //import useState
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Offer = ({ url }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
+  const history = useHistory();
 
   //Récupérer l'id du paramètre passé dans l'URL  offer/:id
   const { id } = useParams();
@@ -59,9 +64,23 @@ const Offer = ({ url }) => {
                 />
                 <span>{data.owner.account.username}</span>
               </div>
-              <Link to="/payment">
-                <div className="btBlue">Acheter</div>
-              </Link>
+              {/* <Link to="/payment"> */}
+              <button
+                className="btBlue"
+                onClick={() => {
+                  history.push(
+                    `/payment/${data.product_name}/${data.product_price}/${data._id}`,
+                    {
+                      title: data.product_name,
+                      amount: data.product_price,
+                      userId: data._id,
+                    }
+                  );
+                }}
+              >
+                Acheter
+              </button>
+              {/* </Link> */}
             </div>
           </div>
         </div>

@@ -1,0 +1,67 @@
+/* ------------------
+CHECKOUT FORM
+--------------------*/
+
+.payment-wrapper {
+  background: #ebedee;
+  height: calc(100vh - 59px);
+}
+
+.payment-container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 36px 20px;
+  /* background-color: blue; */
+}
+
+.payment-card {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+
+.payment-card .divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.1);
+  margin: 24px 0;
+}
+
+.summary-title {
+  margin-bottom: 30px;
+}
+
+.summary-total {
+  font-weight: bold;
+}
+
+.summary-content,
+.summary-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.summary-content div,
+.summary-total div {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+  width: 70%;
+}
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.paymentForm input {
+  margin-top: 30px;
+  width: 100px;
+}
