@@ -25,19 +25,24 @@ const url = "https://lily-vinted.herokuapp.com/";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  const [userId, setUserId] = useState(Cookies.get("userId") || null);
   const [priceSort, setPriceSort] = useState("price-desc");
   const [priceMax, setPriceMax] = useState(200);
   const [priceMin, setPriceMin] = useState(0);
 
-  const setUser = (token) => {
+  const setUser = (token, id) => {
     if (token) {
       //on crée le cookie avec le token du user
       Cookies.set("userToken", token, { expires: 10 });
       setUserToken(token);
+      Cookies.set("userId", id, { expires: 10 });
+      setUserId(id);
     } else {
       //on supprime le cookie du user en cours pour se déconnecter
       Cookies.remove("userToken");
       setUserToken(null);
+      Cookies.remove("userId");
+      setUserId(null);
     }
   };
   return (
@@ -67,7 +72,7 @@ function App() {
           <Publish url={url} userToken={userToken} />
         </Route>
         <Route path="/payment">
-          <Payment url={url} userToken={userToken} />
+          <Payment url={url} userToken={userToken} userId={userId} />
         </Route>
         <Route path="/">
           <Home

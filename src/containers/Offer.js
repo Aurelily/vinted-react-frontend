@@ -64,7 +64,6 @@ const Offer = ({ url }) => {
                 />
                 <span>{data.owner.account.username}</span>
               </div>
-              {/* <Link to="/payment"> */}
               <button
                 className="btBlue"
                 onClick={() => {
@@ -73,14 +72,13 @@ const Offer = ({ url }) => {
                     {
                       title: data.product_name,
                       amount: data.product_price,
-                      userId: data._id,
+                      id: data._id,
                     }
                   );
                 }}
               >
                 Acheter
               </button>
-              {/* </Link> */}
             </div>
           </div>
         </div>
