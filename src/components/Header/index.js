@@ -1,7 +1,7 @@
 import "./index.css";
 import { Link } from "react-router-dom";
 
-import Slider from "../Slider";
+import RangeSlider from "../RangeSlider";
 import SwitchBar from "../SwitchBar";
 
 //import FontAwsome
@@ -37,12 +37,15 @@ const Header = ({
             <span>Tri par prix :</span>
             <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
           </div>
-          <Slider
-            priceMax={priceMax}
-            setPriceMax={setPriceMax}
-            priceMin={priceMin}
-            setPriceMin={setPriceMin}
-          />
+          <div className="sliderBar">
+            <span>Prix entre :</span>
+            <RangeSlider
+              priceMax={priceMax}
+              setPriceMax={setPriceMax}
+              priceMin={priceMin}
+              setPriceMin={setPriceMin}
+            />
+          </div>
         </div>
       </div>
 

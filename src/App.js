@@ -27,7 +27,7 @@ function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
   const [userId, setUserId] = useState(Cookies.get("userId") || null);
   const [priceSort, setPriceSort] = useState("price-desc");
-  const [priceMax, setPriceMax] = useState(200);
+  const [priceMax, setPriceMax] = useState(500);
   const [priceMin, setPriceMin] = useState(0);
 
   const setUser = (token, id) => {

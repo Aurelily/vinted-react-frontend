@@ -1,8 +1,0 @@
-/* ---Slider---*/
-
-.range-slider {
-  display: flex;
-  width: 250px;
-  /* background-color: red; */
-  justify-content: space-between;
-}
