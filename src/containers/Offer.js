@@ -10,6 +10,9 @@ import axios from "axios";
 
 // import { Link } from "react-router-dom";
 
+//For animated loading
+import Loader from "react-loader-spinner";
+
 const Offer = ({ url }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +34,16 @@ const Offer = ({ url }) => {
   }, [id, url]);
 
   return isLoading ? (
-    <span>En cours de chargement...</span>
+    <div className="container-loading">
+      <p>Chargement...</p>
+      <Loader
+        className="home-loader"
+        type="Puff"
+        color="#09b1ba"
+        height={80}
+        width={80}
+      />
+    </div>
   ) : (
     <div className="container">
       <div className="offer-container">
@@ -46,7 +58,9 @@ const Offer = ({ url }) => {
                 {data.product_details.map((elem, index) => {
                   return (
                     <div key={index} className="detail-line">
-                      <span>{Object.keys(elem)}</span>
+                      <span style={{ color: "#999999" }}>
+                        {Object.keys(elem)}
+                      </span>
                       <span>{Object.values(elem)}</span>
                     </div>
                   );
@@ -54,8 +68,11 @@ const Offer = ({ url }) => {
               </div>
             </div>
             <div className="infos-bottom">
-              <p>{data.product_name}</p>
-              <p>{data.product_description}</p>
+              <div>
+                <p style={{ fontWeight: "bold" }}>{data.product_name}</p>
+                <p style={{ color: "#999999" }}>{data.product_description}</p>
+              </div>
+
               <div className="infos-owner">
                 <img
                   className="avatar"

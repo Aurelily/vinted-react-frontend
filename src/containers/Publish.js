@@ -2,11 +2,11 @@ import axios from "axios";
 import { useState } from "react";
 import { useHistory, Redirect } from "react-router-dom";
 
-// //import FontAwsome
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { faPlus } from "@fortawesome/free-solid-svg-icons";
-// library.add(faPlus);
+//import FontAwsome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+library.add(faPlus);
 
 const Publish = ({ url, userToken }) => {
   const [title, setTitle] = useState("");
@@ -57,14 +57,14 @@ const Publish = ({ url, userToken }) => {
         <form onSubmit={handleSubmit}>
           <div className="file-select">
             <div className="dash-preview-without">
-              <input
+              {/* <input
                 type="file"
                 id="file"
                 onChange={(event) => setPicture(event.target.files[0])}
                 // onChange={handleImg}
-              />
+              /> */}
               {/* {picture && <img src={URL.createObjectURL(picture)} />} */}
-              {/* <div className="btAddPhoto">
+              <div className="btAddPhoto">
                 <label for="file" className="label-file">
                   <div className="sign">
                     <FontAwesomeIcon icon="plus" color="#09b1ba" />
@@ -78,7 +78,7 @@ const Publish = ({ url, userToken }) => {
                   className="input-file"
                   onChange={(event) => setPicture(event.target.files[0])}
                 />
-              </div> */}
+              </div>
             </div>
           </div>
           <div className="text-input-section">

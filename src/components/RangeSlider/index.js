@@ -28,8 +28,6 @@ export default function RangeSlider({
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    // setPriceMin(newValue[0]);
-    // setPriceMax(newValue[1]);
   };
 
   const handleChangeCommited = (event, newValue) => {

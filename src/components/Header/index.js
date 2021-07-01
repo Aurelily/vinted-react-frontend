@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import RangeSlider from "../RangeSlider";
 import SwitchBar from "../SwitchBar";
 
+import { useLocation } from "react-router-dom";
+
 //import FontAwsome
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -23,31 +25,37 @@ const Header = ({
   setPriceMax,
   priceMin,
   setPriceMin,
+  search,
+  setSearch,
 }) => {
+  const location = useLocation();
+
   return (
     <div className="header">
       <Link to="/">
         <img className="logo" src="/logo-vinted.png" alt="Logo Vinted" />
       </Link>
-      <div className="searchFilter">
-        <SearchBar />
+      {location.pathname === "/" && (
+        <div className="searchFilter">
+          <SearchBar search={search} setSearch={setSearch} />
 
-        <div className="filtersBar">
-          <div className="switchBar">
-            <span>Tri par prix :</span>
-            <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
-          </div>
-          <div className="sliderBar">
-            <span>Prix entre :</span>
-            <RangeSlider
-              priceMax={priceMax}
-              setPriceMax={setPriceMax}
-              priceMin={priceMin}
-              setPriceMin={setPriceMin}
-            />
+          <div className="filtersBar">
+            <div className="switchBar">
+              <span>Tri par prix :</span>
+              <SwitchBar priceSort={priceSort} setPriceSort={setPriceSort} />
+            </div>
+            <div className="sliderBar">
+              <span>Prix entre :</span>
+              <RangeSlider
+                priceMax={priceMax}
+                setPriceMax={setPriceMax}
+                priceMin={priceMin}
+                setPriceMin={setPriceMin}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="buttons">
         <div className="btsConnect">

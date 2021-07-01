@@ -22,7 +22,7 @@ const Signup = ({ url, setUser }) => {
       //Je me connecte à l'API
       const response = await axios.post(`${url}user/signup`, data);
       console.log(response);
-      //   Je crée le cookie avec le token attribué
+      //Je crée le cookie avec le token attribué
       setUser(response.data.token);
 
       //Je gère l'erreur si la création du token n'a pas fonctionné
@@ -81,6 +81,7 @@ const Signup = ({ url, setUser }) => {
               setPassword(event.target.value);
             }}
           />
+
           <div className="checkboxNews">
             <div className="checkboxAndLabel">
               <input type="checkbox" id="newsletter" name="newsletter" />
@@ -94,11 +95,11 @@ const Signup = ({ url, setUser }) => {
                 confirme avoir au moins 18 ans.
               </p>
             </div>
-            <button id="bt-signup" className="btBlue">
-              S'inscrire
-            </button>
-            <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
           </div>
+          <button id="bt-signup" className="btBlue">
+            S'inscrire
+          </button>
+          <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
         </form>
       </div>
     </div>

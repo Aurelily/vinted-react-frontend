@@ -5,6 +5,9 @@ import { useState, useEffect } from "react";
 //import composants utilisés
 import OfferCard from "../components/OfferCard";
 
+//For animated loading
+import Loader from "react-loader-spinner";
+
 import { Link } from "react-router-dom";
 
 const Home = ({
@@ -15,6 +18,8 @@ const Home = ({
   setPriceMax,
   priceMin,
   setPriceMin,
+  search,
+  setSearch,
 }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +28,7 @@ const Home = ({
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `${url}offers/?priceMax=${priceMax}&priceMin=${priceMin}&sort=${priceSort}`
+        `${url}offers/?priceMax=${priceMax}&priceMin=${priceMin}&sort=${priceSort}&title=${search}`
       );
       console.log(response.data);
       setData(response.data);
@@ -41,10 +46,20 @@ const Home = ({
     priceMin,
     setPriceMax,
     setPriceMin,
+    search,
   ]);
 
   return isLoading ? (
-    <span>En cours de chargement...</span>
+    <div className="container-loading">
+      <p>Chargement...</p>
+      <Loader
+        className="home-loader"
+        type="Puff"
+        color="#09b1ba"
+        height={80}
+        width={80}
+      />
+    </div>
   ) : (
     <div className="container">
       <div className="hero">

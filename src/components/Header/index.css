@@ -25,7 +25,7 @@ HEADER
   flex-direction: row;
   align-items: center;
   /* background-color: red; */
-  width: 100%;
+  width: 400px;
 }
 
 .btsConnect {
@@ -112,4 +112,6 @@ HEADER
 .searchFilter {
   display: flex;
   flex-direction: column;
+  margin-right: 30px;
+  margin-left: 30px;
 }

@@ -1,5 +1,4 @@
 import "./App.css";
-//Import de useState pour gérer le userToken/setUserToken
 import { useState } from "react";
 
 //Après avoir installé le package via le Terminal : yarn add react-router-dom, je l'importe ici
@@ -18,10 +17,11 @@ import Payment from "./containers/Payment";
 
 //import de mes composants utilisés ici
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 //variable URL
-// const url = "http://localhost:3001/";
-const url = "https://lily-vinted.herokuapp.com/";
+const url = "http://localhost:3001/";
+// const url = "https://lily-vinted.herokuapp.com/";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
@@ -29,6 +29,7 @@ function App() {
   const [priceSort, setPriceSort] = useState("price-desc");
   const [priceMax, setPriceMax] = useState(500);
   const [priceMin, setPriceMin] = useState(0);
+  const [search, setSearch] = useState("");
 
   const setUser = (token, id) => {
     if (token) {
@@ -57,6 +58,8 @@ function App() {
         setPriceMax={setPriceMax}
         priceMin={priceMin}
         setPriceMin={setPriceMin}
+        search={search}
+        setSearch={setSearch}
       />
       <Switch>
         <Route path="/offer/:id">
@@ -83,9 +86,12 @@ function App() {
             setPriceMax={setPriceMax}
             priceMin={priceMin}
             setPriceMin={setPriceMin}
+            search={search}
+            setSearch={setSearch}
           />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
