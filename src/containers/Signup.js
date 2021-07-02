@@ -7,20 +7,30 @@ const Signup = ({ url, setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [avatar, setAvatar] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      //Je passe mes datas à envoyer à l'API
-      const data = {
-        username: username,
-        email: email,
-        password: password,
-      };
+      // //Je passe mes datas à envoyer à l'API
+      // const data = {
+      //   username: username,
+      //   email: email,
+      //   password: password,
+      // };
+
+      //formData
+      const formData = new FormData();
+      //ajout des paires clé/valeurs (idem postman)
+      formData.append("username", username);
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("avatar", avatar);
+
       //Je me connecte à l'API
-      const response = await axios.post(`${url}user/signup`, data);
+      const response = await axios.post(`${url}user/signup`, formData);
       console.log(response);
       //Je crée le cookie avec le token attribué
       setUser(response.data.token);
@@ -80,6 +90,16 @@ const Signup = ({ url, setUser }) => {
             onChange={(event) => {
               setPassword(event.target.value);
             }}
+          />
+          <span style={{ color: "#09b1ba", marginTop: "20px" }}>
+            Choisissez votre avatar (optionnel) :
+          </span>
+          <input
+            type="file"
+            id="file"
+            name="avatar"
+            placeholder="Votre avatar"
+            onChange={(event) => setAvatar(event.target.files[0])}
           />
 
           <div className="checkboxNews">

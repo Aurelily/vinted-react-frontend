@@ -40,9 +40,10 @@ OFFER CARDS
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-color: red;
+  background-color: var(--vert-vinted);
   margin-right: 10px;
   object-fit: cover;
+  /* border: 2px solid var(--vert-vinted); */
 }
 
 /* --- Product --- */

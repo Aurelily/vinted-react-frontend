@@ -1,6 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDropzone } from "react-dropzone";
 import { useHistory, Redirect } from "react-router-dom";
+
+//import component
+import MyDropzone from "../components/MyDropzone";
+import MyDropzone2 from "../components/MyDropzone2";
 
 //import FontAwsome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -57,14 +62,15 @@ const Publish = ({ url, userToken }) => {
         <form onSubmit={handleSubmit}>
           <div className="file-select">
             <div className="dash-preview-without">
+              <MyDropzone2 picture={picture} setPicture={setPicture} />
               {/* <input
                 type="file"
                 id="file"
                 onChange={(event) => setPicture(event.target.files[0])}
-                // onChange={handleImg}
+                onClick={(event) => console.log(picture)}
               /> */}
-              {/* {picture && <img src={URL.createObjectURL(picture)} />} */}
-              <div className="btAddPhoto">
+
+              {/* <div className="btAddPhoto">
                 <label for="file" className="label-file">
                   <div className="sign">
                     <FontAwesomeIcon icon="plus" color="#09b1ba" />
@@ -78,7 +84,8 @@ const Publish = ({ url, userToken }) => {
                   className="input-file"
                   onChange={(event) => setPicture(event.target.files[0])}
                 />
-              </div>
+
+              </div> */}
             </div>
           </div>
           <div className="text-input-section">

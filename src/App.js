@@ -20,8 +20,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 //variable URL
-// const url = "http://localhost:3001/";
-const url = "https://lily-vinted.herokuapp.com/";
+const url = "http://localhost:3001/";
+// const url = "https://lily-vinted.herokuapp.com/";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
