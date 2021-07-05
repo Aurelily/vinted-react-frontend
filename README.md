@@ -40,6 +40,8 @@ Overview
 * ReactJS
 * HTML5
 * CSS3
+* Stripe API
+* Cloudinary API
 
 💻 Installation
 ---
