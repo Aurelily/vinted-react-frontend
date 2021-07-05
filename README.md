@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+VINTED Clone 👚👕👖
+-----------------
+  
+📆 Build in : May 2021.   
+🖥 Type : Web ReactJS Frontend demo project.   
+🔗 Netlify - Check functional demo [here](https://lily-react-vinted.netlify.app/).   
 
-## Available Scripts
+-----------------
 
-In the project directory, you can run:
+Overview
+---
+✏️ Vinted clone made at [Le Reacteur](https://www.lereacteur.io/).   
 
-### `yarn start`
+⚙️ Features availables : 
+* You can signin and signup
+* You can disconnected from website
+* You can Search product by name, filter by price and sort by ascending or descending price
+* If you're connected, you can add your own article in collection database (upload pictures and détails...)
+* If you're connected, you can buy an article with a demo credit card number provide by Stripe
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
+![vinted01](https://res.cloudinary.com/lilycloud/image/upload/v1625488346/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.07.45_resultat_hrfsbg.png)
+![vinted02](https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.08.04_resultat_vtqaaa.png). 
+![vinted03](https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.10.38_resultat_pv8gxy.png).
+![vinted04](https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.11.04_resultat_efxbin.png).
+![vinted05](https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.15.31_resultat_d9mwe6.png). 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+🚀 Tasks performed
+---
+* Complete integration, frontend and backend
+* I create complete backend API [here](https://github.com/Aurelily/Vinted)
+* Use ReactJS Hooks
+* Using [Coudinary](https://cloudinary.com/) for pictures upload
+* Using [Stripe](https://stripe.com/) for credit card payment demo
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🛠 Stacks
+---
+* Javascript
+* ReactJS
+* HTML5
+* CSS3
 
-### `yarn build`
+💻 Installation
+---
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Be sure, you have installed all dependencies to the project.  
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1️. Clone this repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`git clone https://github.com/Aurelily/vinted-react-frontend.git`
 
-### `yarn eject`
+`cd vinted-react-frontend`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2️. Install packages
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm install`
+or
+`yarn`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3️. When installation is complete:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`yarn start`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
