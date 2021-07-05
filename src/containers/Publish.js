@@ -1,11 +1,6 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { useDropzone } from "react-dropzone";
+import { useState } from "react";
 import { useHistory, Redirect } from "react-router-dom";
-
-//import component
-import MyDropzone from "../components/MyDropzone";
-import MyDropzone2 from "../components/MyDropzone2";
 
 //import FontAwsome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,6 +18,7 @@ const Publish = ({ url, userToken }) => {
   const [city, setCity] = useState("");
   const [price, setPrice] = useState(0);
   const [picture, setPicture] = useState({});
+  const [preview, setPreview] = useState("");
 
   const history = useHistory();
 
@@ -58,35 +54,53 @@ const Publish = ({ url, userToken }) => {
   return userToken ? (
     <div className="container">
       <div className="publish-container">
-        <h1>Vends ton article</h1>
+        <h1 style={{ marginTop: "20px", color: "#09b1ba", fontWeight: "bold" }}>
+          Vends ton article
+        </h1>
+
         <form onSubmit={handleSubmit}>
           <div className="file-select">
-            <div className="dash-preview-without">
-              <MyDropzone2 picture={picture} setPicture={setPicture} />
-              {/* <input
+            {preview ? (
+              <div className="dashed-preview-image">
+                <img src={preview} alt="preview" />
+                <div
+                  className="remove-img-button"
+                  onClick={() => {
+                    setPreview("");
+                  }}
+                >
+                  X
+                </div>
+              </div>
+            ) : (
+              <div className="dash-preview-without">
+                {/* <MyDropzone2 picture={picture} setPicture={setPicture} /> */}
+                {/* <input
                 type="file"
                 id="file"
                 onChange={(event) => setPicture(event.target.files[0])}
-                onClick={(event) => console.log(picture)}
               /> */}
 
-              {/* <div className="btAddPhoto">
-                <label for="file" className="label-file">
-                  <div className="sign">
-                    <FontAwesomeIcon icon="plus" color="#09b1ba" />
-                  </div>
-                  <span>Ajouter une photo</span>
-                </label>
-                <input
-                  type="file"
-                  id="file"
-                  name="file"
-                  className="input-file"
-                  onChange={(event) => setPicture(event.target.files[0])}
-                />
-
-              </div> */}
-            </div>
+                <div className="btAddPhoto">
+                  <label for="file" className="label-file">
+                    <div className="sign">
+                      <FontAwesomeIcon icon="plus" color="#09b1ba" />
+                    </div>
+                    <span>Ajouter une photo</span>
+                  </label>
+                  <input
+                    type="file"
+                    id="file"
+                    name="file"
+                    className="input-file"
+                    onChange={(event) => {
+                      setPicture(event.target.files[0]);
+                      setPreview(URL.createObjectURL(event.target.files[0]));
+                    }}
+                  />
+                </div>
+              </div>
+            )}
           </div>
           <div className="text-input-section">
             <div className="text-input">

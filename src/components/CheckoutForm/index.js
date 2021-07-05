@@ -3,10 +3,14 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useState } from "react";
 
+//import component
+import ModalFinal from "../ModalFinal";
+
 const CheckoutForm = ({ url, userId, userToken, command }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [successMessage, setSuccessMessage] = useState("");
+  const [showModal, setShowModal] = useState("");
   const title = command.title;
   const amount = command.amount;
   const id = command.id;
@@ -34,7 +38,8 @@ const CheckoutForm = ({ url, userId, userToken, command }) => {
       });
       //Si le paiement est validé je mets à jour mon state successMessage
       if (response.status === 200) {
-        setSuccessMessage("Votre paiement a bien été validé");
+        // setSuccessMessage("Votre paiement a bien été validé");
+        setShowModal(true);
         const deletionResponse = await axios.delete(
           `${url}offer/delete/${id}`,
 
@@ -58,19 +63,22 @@ const CheckoutForm = ({ url, userId, userToken, command }) => {
 
   return (
     <div className="payment-wrapper">
+      {showModal && (
+        <ModalFinal showModal={showModal} setShowModal={setShowModal} />
+      )}
       <div className="payment-container">
         <div className="payment-card">
-          <div className="summary-title">{`Résumé de la commande : ${id}`}</div>
+          <div className="summary-title">{`Résumé de la commande :`}</div>
           <div className="summary-content">
-            <div>
+            <div className="summary-line">
               <span>Commande</span>
               <span>{`${amount} €`}</span>
             </div>
-            <div>
+            <div className="summary-line">
               <span>Frais de protection acheteurs</span>
               <span>{`${fraisProtec} €`}</span>
             </div>
-            <div>
+            <div className="summary-line">
               <span>Frais de port</span>
               <span>{`${fdp} €`}</span>
             </div>
@@ -85,15 +93,26 @@ const CheckoutForm = ({ url, userId, userToken, command }) => {
           <div className="divider"></div>
           <div className="payment-card">
             <div className="payment-final">
-              {`Il ne vous reste plus qu'un étape pour vous offrir ${title}. Vous
-              allez payer ${total} € (frais de protection et frais de port inclus).`}
+              <span>Il ne vous reste plus qu'un étape pour vous offrir </span>
+              <span style={{ fontWeight: "bold" }}> {`${title}.`}</span>
+              <span>Vous allez payer :</span>
+              <span style={{ fontWeight: "bold" }}>{`${total}`}</span>
+              <span>€ (frais de protection et frais de port inclus).</span>
             </div>
             <div className="divider"></div>
             <form onSubmit={handleSubmit} className="paymentForm">
+              <p style={{ fontSize: "11px", marginBottom: "20px" }}>
+                Pour tester la démo du service :
+                <p>
+                  {" "}
+                  N° de carte 4242424242424242 date: 04/24 CVC: 242 ZipCode :
+                  42424
+                </p>
+              </p>
               <CardElement />
               <input className="btBlue" type="submit" value="Payer" />
             </form>
-            {successMessage}
+            <p>{successMessage}</p>
           </div>
         </div>
       </div>

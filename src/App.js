@@ -69,7 +69,12 @@ function App() {
           <Signup url={url} setUser={setUser} />
         </Route>
         <Route path="/login">
-          <Login url={url} setUser={setUser} />
+          <Login
+            url={url}
+            setUser={setUser}
+            userId={userId}
+            setUserId={setUserId}
+          />
         </Route>
         <Route path="/publish">
           <Publish url={url} userToken={userToken} />

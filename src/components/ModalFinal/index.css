@@ -1,0 +1,30 @@
+/* ---------------------
+MODAL
+------------------------ */
+
+.modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: -300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-message {
+  width: 400px;
+  height: 20%;
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #09b1ba;
+  line-height: 30px;
+}

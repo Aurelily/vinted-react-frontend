@@ -46,8 +46,6 @@ function MyDropzone2({ picture, setPicture }) {
           })
         )
       );
-      setPicture(acceptedFiles);
-      console.log(picture);
     },
   });
 

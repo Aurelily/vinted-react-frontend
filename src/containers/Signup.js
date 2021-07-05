@@ -33,11 +33,11 @@ const Signup = ({ url, setUser }) => {
       const response = await axios.post(`${url}user/signup`, formData);
       console.log(response);
       //Je crée le cookie avec le token attribué
-      setUser(response.data.token);
+      setUser(response.data.token, response.data._id);
 
       //Je gère l'erreur si la création du token n'a pas fonctionné
       if (response.data.token) {
-        setUser(response.data.token);
+        setUser(response.data.token, response.data._id);
         history.push("/");
       } else {
         setErrorMessage("Une erreur est survenue.");

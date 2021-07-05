@@ -1,4 +1,4 @@
-import { Redirect, useParams, useLocation } from "react-router-dom";
+import { Redirect, useLocation } from "react-router-dom";
 
 //Import des hooks Stripe
 import { loadStripe } from "@stripe/stripe-js";
@@ -10,11 +10,6 @@ import CheckoutForm from "../components/CheckoutForm";
 const Payment = ({ url, userToken, userId }) => {
   const location = useLocation();
   const command = { ...location.state };
-
-  //Récupérer le product_name et le product_price du paramètre passé dans l'URL  payment/:title/:amount/:name
-  // const { title, amount, id } = useParams();
-  //   const { amount } = useParams();
-  //   const { userId } = useParams();
 
   //Envoie de ma clé public Stripe
   const stripePromise = loadStripe(
