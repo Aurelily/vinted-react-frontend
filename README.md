@@ -12,7 +12,7 @@ Overview
 ✏️ Vinted clone made at [Le Reacteur](https://www.lereacteur.io/).   
 
 ⚙️ Features availables : 
-* You can signin and signup
+* You can signin and signup, upload your avatar
 * You can disconnected from website
 * You can Search product by name, filter by price and sort by ascending or descending price
 * If you're connected, you can add your own article in collection database (upload pictures and détails...)
