@@ -33,6 +33,7 @@ Overview
 * Use ReactJS Hooks
 * Using [Coudinary](https://cloudinary.com/) for pictures upload
 * Using [Stripe](https://stripe.com/) for credit card payment demo
+* Backend server hosted by [Heroku](https://heroku.com)
 
 🛠 Stacks
 ---
