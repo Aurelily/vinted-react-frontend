@@ -3,7 +3,12 @@ VINTED Clone 👚👕👖
   
 📆 Build in : May 2021.   
 🖥 Type : Web ReactJS Frontend demo project.   
-🔗 Netlify - Check functional demo [here](https://lily-react-vinted.netlify.app/).   
+🔗 Netlify - Check functional demo [here](https://lily-react-vinted.netlify.app/).
+
+If you want to Sign in directly use this codes :
+---
+email : test@gmail.com
+password : azerty
 
 -----------------
 
