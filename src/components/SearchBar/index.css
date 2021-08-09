@@ -27,6 +27,6 @@ MEDIAS QUERIES
 /*------Max 647 px------*/
 @media (max-width: 647px) {
   .searchBar {
-    width: 400px;
+    width: 410px;
   }
 }
