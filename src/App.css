@@ -340,3 +340,43 @@ PUBLISH PAGE
   align-items: center;
   margin-bottom: 20px;
 }
+/*--------------------------
+MEDIAS QUERIES
+----------------------------*/
+
+/*------Max 897 px------*/
+@media (max-width: 897px) {
+  .col1-picture img {
+    max-height: 400px;
+    max-width: 400px;
+  }
+  .infos-content {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+    padding: 50px 50px;
+  }
+}
+/*------Max 647 px------*/
+@media (max-width: 647px) {
+  .offer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: var(--light-grey-vinted);
+    margin: 50px;
+  }
+  .signUpContent,
+  .loginContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 100px;
+  }
+}
