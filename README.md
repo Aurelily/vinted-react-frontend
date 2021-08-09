@@ -7,8 +7,8 @@ VINTED Clone 👚👕👖
 
 If you want to Sign in directly use this codes :
 ---
-email : test@gmail.com
-password : azerty
+* email : test@gmail.com
+* password : azerty
 
 -----------------
 
