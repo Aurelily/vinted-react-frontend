@@ -5,13 +5,11 @@ VINTED Clone 👚👕👖
 🖥 Type : Web ReactJS Frontend responsive demo project.   
 🔗 Netlify - Check functional demo [here](https://lily-react-vinted.netlify.app/).
 
-You can Sign Up on demo or directly Sign in for testing with
---
+### You can Sign Up on demo or directly Sign in for testing with
 * email : test@gmail.com
 * password : azerty
 
-For payment simulation using Stripe API you can use this fake card number :
---
+### For payment simulation using Stripe API you can use this fake card number :
 Card number :  4242424242424242 validity date: 04/24 CVC: 242 ZipCode : 42424
 
 -----------------
