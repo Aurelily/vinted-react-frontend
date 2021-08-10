@@ -2,13 +2,17 @@ VINTED Clone 👚👕👖
 -----------------
   
 📆 Build in : May 2021.   
-🖥 Type : Web ReactJS Frontend demo project.   
+🖥 Type : Web ReactJS Frontend responsive demo project.   
 🔗 Netlify - Check functional demo [here](https://lily-react-vinted.netlify.app/).
 
-If you want to Sign in directly use this codes :
----
+You can Sign Up on demo or directly Sign in for testing with
+--
 * email : test@gmail.com
 * password : azerty
+
+For payment simulation using Stripes use this card number :
+--
+Card number :  4242424242424242 validity date: 04/24 CVC: 242 ZipCode : 42424
 
 -----------------
 
@@ -33,9 +37,10 @@ Overview
 
 🚀 Tasks performed
 ---
-* Complete integration, frontend and backend
+* Complete integration, responsive frontend and backend
 * I create complete backend API [here](https://github.com/Aurelily/Vinted)
 * Use ReactJS Hooks
+* Use responsive design
 * Using [Coudinary](https://cloudinary.com/) for pictures upload
 * Using [Stripe](https://stripe.com/) for credit card payment demo
 * Backend server hosted by [Heroku](https://heroku.com)
@@ -45,6 +50,7 @@ Overview
 * Javascript
 * ReactJS
 * HTML5
+* Media queries (responsive design)
 * CSS3
 * Stripe API
 * Cloudinary API
