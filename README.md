@@ -10,7 +10,7 @@ You can Sign Up on demo or directly Sign in for testing with
 * email : test@gmail.com
 * password : azerty
 
-For payment simulation using Stripes use this card number :
+For payment simulation using Stripe API you can use this fake card number :
 --
 Card number :  4242424242424242 validity date: 04/24 CVC: 242 ZipCode : 42424
 
@@ -28,11 +28,23 @@ Overview
 * If you're connected, you can buy an article with a demo credit card number provide by Stripe
 
 ---
-![vinted01](https://res.cloudinary.com/lilycloud/image/upload/v1625488346/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.07.45_resultat_hrfsbg.png)
-![vinted02](https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.08.04_resultat_vtqaaa.png). 
-![vinted03](https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.10.38_resultat_pv8gxy.png).
-![vinted04](https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.11.04_resultat_efxbin.png).
-![vinted05](https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.15.31_resultat_d9mwe6.png). 
+<table>
+  <tr>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1625488346/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.07.45_resultat_hrfsbg.png"  alt="vinted01"></td>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.08.04_resultat_vtqaaa.png"  alt="vinted02"></td>
+  </tr>
+    <tr>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.10.38_resultat_pv8gxy.png"  alt="vinted03"></td>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.11.04_resultat_efxbin.png"  alt="vinted04"></td>
+  </tr>
+  <tr>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1625488345/Git%20ReadMe/Vinted/Capture_d_%C3%A9cran_2021-07-05_%C3%A0_14.15.31_resultat_d9mwe6.png"  alt="vinted05"></td>
+
+  </tr>
+  </table>
+
+
+
 
 
 🚀 Tasks performed
