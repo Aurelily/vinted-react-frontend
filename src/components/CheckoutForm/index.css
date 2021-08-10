@@ -75,3 +75,15 @@ CHECKOUT FORM
 .payment-final {
   line-height: 20px;
 }
+/*--------------------------
+MEDIAS QUERIES
+----------------------------*/
+
+/*------Max 647 px------*/
+@media (max-width: 647px) {
+  .payment-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 36px 20px;
+  }
+}
