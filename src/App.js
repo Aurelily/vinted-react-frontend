@@ -22,7 +22,7 @@ import Footer from "./components/Footer";
 //variable URL
 // const url = "http://localhost:3001/";
 // const url = "https://lily-vinted.herokuapp.com/";
-const url = "https://vinted-eight.vercel.app/";
+const url = "https://vinted-express-git-main-aurelily.vercel.app/";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
