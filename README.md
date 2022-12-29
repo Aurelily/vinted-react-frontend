@@ -12,6 +12,9 @@ VINTED Clone 👚👕👖
 ### For payment simulation using Stripe API you can use this fake card number :
 Card number :  4242424242424242 validity date: 04/24 CVC: 242 ZipCode : 42424
 
+
+I made API backend (hosted by VERCEL) : [Backend repository here](https://github.com/Aurelily/Vinted)
+
 -----------------
 
 Overview
